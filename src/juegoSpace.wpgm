@@ -1,0 +1,13 @@
+import wollok.game.*
+import nivel.*
+import nave.*
+
+
+
+program juegoSpace {
+	
+	nivel.configurate()
+	game.start()
+  
+ 
+}
