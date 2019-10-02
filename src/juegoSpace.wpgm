@@ -1,13 +1,15 @@
 import wollok.game.*
 import nivel.*
 import nave.*
-
-
+import armas.*
 
 program juegoSpace {
 	
-	nivel.configurate()
+	
+	nivel.configurete()
 	game.start()
-  
- 
+    game.whenCollideDo( nave,{arma =>arma.colisionaCon(nave)})
+   
 }
+    
+

@@ -1,19 +1,30 @@
 import wollok.game.*
 
-object bomba{
+
+
+object bomba {
+	
+	var property alcance = 100
+	
+	method image() = "bomba.png"
+	
+	method colisionaCon(objetoVolador){
 	
 	
+	game.say(objetoVolador,"Nueva arma" + self.alcance())
+	game.removeVisual(self)
+    }
+    //objetoVolador.armasQueTengo(self)
+
 	
-	method image() ="bomba.png"
-		
-	method gastoCombustible() = 100
+
 }
 
 
-object misiles{
+//class Misiles inherits Armas {
 	
 	
-	method image() = "misiles.png"
+//	method image() = "misiles.png"
 	
-	method gastoCombustible() = 10
-}
+	
+//}

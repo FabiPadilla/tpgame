@@ -2,25 +2,23 @@ import wollok.game.*
 
 object nave {
 	
-	var property position = new Position(x = 0, y = 0)
+	 var  property armasQueTengo=[]
 	 
-	var property combustible = 0
+	var property tieneCombustible = 2
+	 
+	 var property position = game.origin()
+	 
+	 method image() = "nave.png"
 	
-	method image() = "nave.png"
-	
+	 //method mensaje(){
+	 //return "Tengo una nueva arma"
+	 //}
+     
+     method tomarArma(nuevarma){
+       armasQueTengo.add(nuevarma)
+     }
+     
     
-/* 	
-	var armas=[]
-	method tomarArma(arma){
-		armas.add(arma)
-	}
-	
-	method cantidadArmas(){
-		armas.size()
-	}
-    
-    
-    
-    
-*/	
+     
+      
 }
