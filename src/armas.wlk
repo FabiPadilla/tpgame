@@ -9,8 +9,6 @@ object bomba {
 	method image() = "bomba.png"
 	
 	method colisionaCon(objetoVolador){
-	
-	
 	game.say(objetoVolador,"Nueva arma" + self.alcance())
 	game.removeVisual(self)
     }
