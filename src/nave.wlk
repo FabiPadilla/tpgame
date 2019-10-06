@@ -2,23 +2,27 @@ import wollok.game.*
 
 object nave {
 	
-	 var  property armasQueTengo=[]
+	 var armasQueTengo =[]
 	 
-	var property tieneCombustible = 2
+	 var  property combustible = 100
 	 
 	 var property position = game.origin()
 	 
-	 method image() = "nave.png"
+	 method image() {
+	 return if (position==game.at(5,7)){
+	 game.removeVisual(self)
+	 //pikachu.image()
+	 }
+	 else 
+	 "nave.png"
+	 
+	 }
 	
-	 //method mensaje(){
-	 //return "Tengo una nueva arma"
-	 //}
-     
-     method tomarArma(nuevarma){
-       armasQueTengo.add(nuevarma)
-     }
+
+    method meQuedeSinCombustible(){
+    	return combustible <0
+    }
      
     
-     
       
 }

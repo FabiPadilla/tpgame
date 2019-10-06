@@ -5,28 +5,32 @@ import armas.*
 
 object nivel {
 
-method configurete() {
+    method configurete() {
 	
 	// LIMITES DEL JUEGO
-	game.title("JuegoSpace")
+	game.title("GameSpace")
 	game.height(10)
 	game.width(10)
-    // FONDO
+//    // FONDO
 	game.boardGround("suelo.png")
     // VISUALES
-	game.addVisual(nave)
+	//game.addVisual(nave)
+	game.addVisual(bomba)
+	game.addVisual(misil)
+	game.addVisual(agujero)
 	
-	//game.addVisualCharacter(nave)
-	movimiento.configurarFlechas(nave)
-	game.addVisualIn(bomba, game.at ( 0, 1 ))
+	
+	
+	game.addVisualCharacter(nave)
+	//movimiento.configurarFlechas(nave)
+	//game.addVisualIn(bomba, game.at ( 0, 1 ))
 	//game.addVisualIn(misiles, game.at ( 5, 3 ))
+	game.whenCollideDo( nave,{arma =>arma.colisionoCon(nave)})
 	
+	}
+	method configurarColisiones(){
+	//	game.whenCollideDo( nave,{arma =>arma.colisionoCon(nave)})
+	}
 	
-	/* // TECLADO
-	keyboard.f (). onPressDo {nave.misiles ()}
-	keyboard.b (). onPressDo {nave.bomba ()}
-	*/
-		
-	/*keyboard.space (). onPressDo {game.say (nave,   " combustible: "  + nave.combustible ())}  */
-}
+
 }

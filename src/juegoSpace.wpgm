@@ -2,13 +2,22 @@ import wollok.game.*
 import nivel.*
 import nave.*
 import armas.*
+import movimiento.*
 
 program juegoSpace {
 	
 	
 	nivel.configurete()
-	game.start()
-    game.whenCollideDo( nave,{arma =>arma.colisionaCon(nave)})
+	
+    nivel.configurarColisiones()
+    
+    
+    //PARA VER LOS ATRIBUTOS DE LA NAVE CUANDO UBICO EL MOUSE EN ELLA
+    game.showAttributes(nave) 
+    
+    game.start()
+    
+   
    
 }
     
