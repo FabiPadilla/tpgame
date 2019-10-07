@@ -28,9 +28,9 @@ object nivel {
 	game.whenCollideDo( nave,{arma =>arma.colisionoCon(nave)})
 	
 	}
-	method configurarColisiones(){
+	//method configurarColisiones(){
 	//	game.whenCollideDo( nave,{arma =>arma.colisionoCon(nave)})
-	}
+	//}
 	
 
 }

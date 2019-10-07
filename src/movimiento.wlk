@@ -1,12 +1,13 @@
 import wollok.game.*
+import nave.*
 
 object movimiento {
 	
 	method configurarFlechas(visual){
-		keyboard.up().onPressDo{ self.mover(arriba,visual)}
-		keyboard.down().onPressDo{ self.mover(abajo,visual)}
-		keyboard.left().onPressDo{ self.mover(izquierda,visual)}
-		keyboard.right().onPressDo{ self.mover(derecha,visual)}
+		keyboard.up().onPressDo{nave.irA(nave.position().up())}
+		keyboard.down().onPressDo{nave.irA(nave.position().down()) }
+		keyboard.left().onPressDo{ nave.irA(nave.position().left())}
+		keyboard.right().onPressDo{ nave.irA(nave.position().right())}
    }
 	
 	method mover(direccion,personaje){

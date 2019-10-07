@@ -48,21 +48,19 @@ object misil {
 	
 	method colisionoCon(objetoVolador){
    
-      game.say(objetoVolador,"Caiste en un agujero negro " )
+      game.say(self,"Caiste en un agujero negro " )
       game.removeVisual(objetoVolador)
       game.removeVisual(self)
-      game.addVisual(pikachu.image())
-      //game.addVisual("pikachuAsombrado.png")
-      //game.onTick(2*100000,"pikachu",{pikachu.image()})
-      
+     
+   
     }
     
     }  
     
   object pikachu{
   	
-
-  	
+   var property position = game.at(5,7)
+  
   	method image() = "pikachuAsombrado.png"
   		
   	

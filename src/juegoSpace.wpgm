@@ -6,19 +6,13 @@ import movimiento.*
 
 program juegoSpace {
 	
-	
 	nivel.configurete()
-	
-    nivel.configurarColisiones()
-    
     
     //PARA VER LOS ATRIBUTOS DE LA NAVE CUANDO UBICO EL MOUSE EN ELLA
     game.showAttributes(nave) 
     
     game.start()
     
-   
-   
 }
     
 
