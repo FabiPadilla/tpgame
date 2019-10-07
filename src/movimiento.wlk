@@ -4,10 +4,10 @@ import nave.*
 object movimiento {
 	
 	method configurarFlechas(visual){
-		keyboard.up().onPressDo{nave.irA(nave.position().up())}
-		keyboard.down().onPressDo{nave.irA(nave.position().down()) }
-		keyboard.left().onPressDo{ nave.irA(nave.position().left())}
-		keyboard.right().onPressDo{ nave.irA(nave.position().right())}
+		keyboard.up().onPressDo{nave.irA(nave.position().up(1))}
+		keyboard.down().onPressDo{nave.irA(nave.position().down(1)) }
+		keyboard.left().onPressDo{ nave.irA(nave.position().left(1))}
+		keyboard.right().onPressDo{ nave.irA(nave.position().right(1))}
    }
 	
 	method mover(direccion,personaje){

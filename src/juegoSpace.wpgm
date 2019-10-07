@@ -7,7 +7,7 @@ import movimiento.*
 program juegoSpace {
 	
 	nivel.configurete()
-    
+    movimiento.configurarFlechas(nave)
     //PARA VER LOS ATRIBUTOS DE LA NAVE CUANDO UBICO EL MOUSE EN ELLA
     game.showAttributes(nave) 
     
