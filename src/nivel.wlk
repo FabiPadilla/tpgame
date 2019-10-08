@@ -3,6 +3,7 @@ import movimiento.*
 import wollok.game.*
 import armas.* 
 
+
 object nivel {
 
     method configurete() {
@@ -11,26 +12,18 @@ object nivel {
 	game.title("GameSpace")
 	game.height(10)
 	game.width(10)
-//    // FONDO
+    // FONDO
 	game.boardGround("suelo.png")
     // VISUALES
-	//game.addVisual(nave)
+	
 	game.addVisual(bomba)
 	game.addVisual(misil)
 	game.addVisual(agujero)
-	
-	
-	
+
 	game.addVisualCharacter(nave)
-	//movimiento.configurarFlechas(nave)
-	//game.addVisualIn(bomba, game.at ( 0, 1 ))
-	//game.addVisualIn(misiles, game.at ( 5, 3 ))
+    game.onTick(800,"AGUJERO",{nave.caiEnAgujero(agujero)})
 	game.whenCollideDo( nave,{arma =>arma.colisionoCon(nave)})
-	
+	//game.onTick()
 	}
-	//method configurarColisiones(){
-	//	game.whenCollideDo( nave,{arma =>arma.colisionoCon(nave)})
-	//}
-	
 
 }

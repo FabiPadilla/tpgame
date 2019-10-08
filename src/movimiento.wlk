@@ -8,6 +8,9 @@ object movimiento {
 		keyboard.down().onPressDo{nave.irA(nave.position().down(1)) }
 		keyboard.left().onPressDo{ nave.irA(nave.position().left(1))}
 		keyboard.right().onPressDo{ nave.irA(nave.position().right(1))}
+		keyboard.o().onPressDo{ nave.irA(game.origin())}
+		keyboard.p().onPressDo{ nave.irA(game.at(0,10))}
+		keyboard.u().onPressDo{ nave.irA(game.at(5,0))}
    }
 	
 	method mover(direccion,personaje){

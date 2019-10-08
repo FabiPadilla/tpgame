@@ -15,6 +15,7 @@ object bomba {
    
       game.say(objetoVolador,"bomba econtrada " + "de alcance : " + self.alcance())
       game.removeVisual(self)
+      objetoVolador.juntarArma(self)
       
     
      }
@@ -48,9 +49,8 @@ object misil {
 	
 	method colisionoCon(objetoVolador){
    
-      game.say(self,"Caiste en un agujero negro " )
-      game.removeVisual(objetoVolador)
-      game.removeVisual(self)
+     //game.removeVisual(objetoVolador)
+      //game.removeVisual(self)
      
    
     }
