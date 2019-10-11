@@ -1,11 +1,12 @@
 import wollok.game.*
 import armas.*
+import movimiento.*
 
 object nave {
 	
 	var armas =[]
 	 
-	 var  property combustible = 10
+	 var  property combustible = 20
 	 
 	 var property position = game.origin()
 	 
@@ -47,7 +48,7 @@ object nave {
 	  game.addVisual(pikachu)
 	  game.say(pikachu,"Caiste en un Agujero.PERDISTE!")
 	  game.removeVisual(unAgujero)
-	  game.stop()
+	  
 	  
 	  	
 	  }
@@ -57,4 +58,10 @@ object nave {
       method juntarArma(nuevaArma){
       	armas.add(nuevaArma)
       }  
+      
+     // method noTeMuevas(){ 	
+     //	game.say(self,"Perdiste")
+      //	game.stop()
+      	//}
+      
 }

@@ -4,6 +4,7 @@ import nave.*
 object movimiento {
 	
 	method configurarFlechas(visual){
+		
 		keyboard.up().onPressDo{nave.irA(nave.position().up(1))}
 		keyboard.down().onPressDo{nave.irA(nave.position().down(1)) }
 		keyboard.left().onPressDo{ nave.irA(nave.position().left(1))}

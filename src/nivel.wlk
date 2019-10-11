@@ -20,8 +20,8 @@ object nivel {
 	game.addVisual(misil)
 	game.addVisual(agujero)
 
-	game.addVisualCharacter(nave)
-    game.onTick(800,"AGUJERO",{nave.caiEnAgujero(agujero)})
+	game.addVisual(nave)
+    game.onTick(100,"AGUJERO",{nave.caiEnAgujero(agujero)})
 	game.whenCollideDo( nave,{arma =>arma.colisionoCon(nave)})
 	//game.onTick()
 	}
