@@ -13,7 +13,7 @@ object nivel {
 	game.height(10)
 	game.width(10)
     // FONDO
-	game.boardGround("suelo.png")
+	game.boardGround("suelo11.png")
     // VISUALES
 	
 	game.addVisual(bomba)

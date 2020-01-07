@@ -1,8 +1,6 @@
 import wollok.game.*
 import nave.*
 
-
-
 object bomba {
 	
 	var property position = game.at(3,2)
@@ -13,14 +11,13 @@ object bomba {
 	
 	method colisionoCon(objetoVolador){
    
-      game.say(objetoVolador,"bomba econtrada " + "de alcance : " + self.alcance())
+      game.say(objetoVolador," bomba econtrada " + " alcance : " + self.alcance())
       game.removeVisual(self)
       objetoVolador.juntarArma(self)
       
-    
      }
 
-//class Misiles inherits Armas {
+
 }
 
 object misil {
@@ -33,8 +30,9 @@ object misil {
 	method image() = "misiles.png"
 	
 	method colisionoCon(objetoVolador){
-     game.say(objetoVolador,"misil encontrado " + "de alcance : " + self.alcance())
+     game.say(objetoVolador,"misil encontrado " + " alcance : " + self.alcance())
      game.removeVisual(self)
+     objetoVolador.juntarArma(self)
      }
      }
      
@@ -48,11 +46,10 @@ object misil {
 	method image() = "agujeroNegro.png"
 	
 	method colisionoCon(objetoVolador){
-   
+      objetoVolador.position(5,5)
+      pikachu.image()
      //game.removeVisual(objetoVolador)
       //game.removeVisual(self)
-     
-   
     }
     
     }  

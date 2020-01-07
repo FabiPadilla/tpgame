@@ -15,20 +15,22 @@ object nave {
 	 //game.removeVisual(self)
 	 //}
 	 //else
-	 = "nave.png"
+	 = "nave11.png"
 	 //game.say(self,"caiste en un agujero negro")
 	 
  
-	// }
+	 // }
 
-      method irA(nuevaPosicion) {
+     method irA(nuevaPosicion) {
       if (self.noTengoCombustible()){
 	   self.viaja(position.distance(nuevaPosicion))
 	   position = nuevaPosicion
       }
       else{
-      	//FALTA PONERLE TIMEPO PARA VER EL MENSAJE ANTES DE QUE CIERRE
-      	game.say(self,"Te quedaste sin combustible")
+      	//FALTA PONERLE TIEMPO PARA VER EL MENSAJE ANTES DE QUE CIERRE
+       game.onTick(100,"ARMA",{game.say(self,"Te quedaste sin combustible")})
+     
+       game.onTick(2000,"ARMA",{game.stop()})
       	}
       }
       
@@ -38,30 +40,26 @@ object nave {
       }
 
       method noTengoCombustible(){
-	   return combustible>=0
+	   return combustible>0
       } 
    
       method caiEnAgujero(unAgujero){
 	  return if(position== unAgujero.position()){
 	  	
 	  game.removeVisual(self)
-	  game.addVisual(pikachu)
-	  game.say(pikachu,"Caiste en un Agujero.PERDISTE!")
+	  //game.addVisual(pikachu)
+	  game.onTick(100,"ARMA",{game.say(pikachu,"Caiste en un agujero.PERDISTE!")})
 	  game.removeVisual(unAgujero)
 	  
 	  
-	  	
+	  }	
+	  else{}
 	  }
-	  else {}
-      }
-    
+          
       method juntarArma(nuevaArma){
       	armas.add(nuevaArma)
       }  
-      
-     // method noTeMuevas(){ 	
-     //	game.say(self,"Perdiste")
-      //	game.stop()
-      	//}
-      
+      method armasQueTengo(){
+        game.say(armas,"mis armas")//Quiero mostrar las armas que voy juntando o que junté
+        }
 }
