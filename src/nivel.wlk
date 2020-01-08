@@ -15,13 +15,11 @@ object nivel {
     // FONDO
 	game.boardGround("suelo11.png")
     // VISUALES
-	
 	game.addVisual(bomba)
 	game.addVisual(misil)
 	game.addVisual(agujero)
-
 	game.addVisual(nave)
-    game.onTick(100,"AGUJERO",{nave.caiEnAgujero(agujero)})
+    //game.onTick(100,"AGUJERO",{nave.caiEnAgujero(agujero)})
 	game.whenCollideDo( nave,{arma =>arma.colisionoCon(nave)})
 	//game.onTick()
 	}

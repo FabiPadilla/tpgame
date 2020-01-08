@@ -22,7 +22,7 @@ object bomba {
 
 object misil {
 	
-	var property position = game.at(5,9)
+	var property position = game.at(9,6)
 	
 	var property alcance = 300
 	
@@ -41,17 +41,27 @@ object misil {
 	
 	var property position = game.at(5,7)
 	
-	//var property alcance = 100
+	var property alcance = 100
 	
 	method image() = "agujeroNegro.png"
 	
 	method colisionoCon(objetoVolador){
-      objetoVolador.position(5,5)
-      pikachu.image()
-     //game.removeVisual(objetoVolador)
+	    if(position== objetoVolador.position()){
+	  	game.removeVisual(self)
+	  	game.removeVisual(objetoVolador)
+	    game.addVisual(pikachu)
+	    game.onTick(100,"ARMA",{game.say(pikachu,"Caiste en un agujero")})
+	    objetoVolador.position()
+	    }
+	    
+	    else{}
+	    	  
+	}
+      //pikachu.image()
+      //game.removeVisual(objetoVolador)
+      //objetoVolador.position(5,5)
       //game.removeVisual(self)
-    }
-    
+    //}
     }  
     
   object pikachu{
@@ -59,7 +69,5 @@ object misil {
    var property position = game.at(5,7)
   
   	method image() = "pikachuAsombrado.png"
-  		
-  	
   }
     
