@@ -10,15 +10,8 @@ object nave {
 	 
 	 var property position = game.origin()
 	 
-	 method image() 
-	 // if (self.caiEnAgujero(unAgujero)) { 
-	 //game.removeVisual(self)
-	 //}
-	 //else
-	 = "nave11.png"
-	 //game.say(self,"caiste en un agujero negro")
-	 // }
-
+	 method image() = "nave11.png"
+	
      method irA(nuevaPosicion) {
       if (self.noTengoCombustible()){
 	   self.viaja(position.distance(nuevaPosicion))

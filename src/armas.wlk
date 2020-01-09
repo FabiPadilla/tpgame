@@ -14,10 +14,7 @@ object bomba {
       game.say(objetoVolador," bomba econtrada " + " alcance : " + self.alcance())
       game.removeVisual(self)
       objetoVolador.juntarArma(self)
-      
      }
-
-
 }
 
 object misil {
@@ -35,8 +32,7 @@ object misil {
      objetoVolador.juntarArma(self)
      }
      }
-     
-     
+          
  object agujero {
 	
 	var property position = game.at(5,7)
@@ -48,20 +44,13 @@ object misil {
 	method colisionoCon(objetoVolador){
 	    if(position== objetoVolador.position()){
 	  	game.removeVisual(self)
-	  	game.removeVisual(objetoVolador)
+	  	//game.removeVisual(objetoVolador)
 	    game.addVisual(pikachu)
 	    game.onTick(100,"ARMA",{game.say(pikachu,"Caiste en un agujero")})
-	    objetoVolador.position()
-	    }
-	    
-	    else{}
-	    	  
+	    //game.onTick(2000,"ARMA",{game.stop()})
+	    objetoVolador.position(game.at(8,8))}
+	    else{}   	  
 	}
-      //pikachu.image()
-      //game.removeVisual(objetoVolador)
-      //objetoVolador.position(5,5)
-      //game.removeVisual(self)
-    //}
     }  
     
   object pikachu{
@@ -70,4 +59,16 @@ object misil {
   
   	method image() = "pikachuAsombrado.png"
   }
-    
+
+  object combustible{
+
+   var property position=game.at(1,5)
+ 
+   method image()= "combustibleDeLaNave.png"
+
+    //method colisonoCon(objetoVolador){
+      //  if(position== objetoVolador.position()){
+	    //   	 objetoVolador.combustible(300)}
+	    //else{}   	  
+    //}
+ }
