@@ -23,7 +23,6 @@ object misil {
 	
 	var property alcance = 300
 	
-	
 	method image() = "misiles.png"
 	
 	method colisionoCon(objetoVolador){
@@ -31,9 +30,9 @@ object misil {
      game.removeVisual(self)
      objetoVolador.juntarArma(self)
      }
-     }
+}
           
- object agujero {
+object agujero {
 	
 	var property position = game.at(5,7)
 	
@@ -42,33 +41,43 @@ object misil {
 	method image() = "agujeroNegro.png"
 	
 	method colisionoCon(objetoVolador){
-	    if(position== objetoVolador.position()){
-	  	game.removeVisual(self)
-	  	//game.removeVisual(objetoVolador)
-	    game.addVisual(pikachu)
-	    game.onTick(100,"ARMA",{game.say(pikachu,"Caiste en un agujero")})
-	    //game.onTick(2000,"ARMA",{game.stop()})
-	    objetoVolador.position(game.at(8,8))}
-	    else{}   	  
+	   return if(position== objetoVolador.position()){
+	  	      // game.removeVisual(self)
+	           game.onTick(100,"ARMA",{game.say(game.addVisual(pikachu),"Caiste en un agujero")})
+	           //game.onTick(2000,"ARMA",{game.stop()})
+	     
+	           objetoVolador.position(game.at(8,8))
+	           game.removeVisual(pikachu)
+	           game.addVisual(self)
+	           
+	           }
+	         else{}   	  
 	}
-    }  
+}  
     
-  object pikachu{
+object pikachu{
   	
    var property position = game.at(5,7)
   
-  	method image() = "pikachuAsombrado.png"
-  }
+   method image() = "pikachuAsombrado.png"
+}
 
-  object combustible{
+object combustibles{
 
-   var property position=game.at(1,5)
+   var property position=game.at(0,5)
  
-   method image()= "combustibleDeLaNave.png"
+   method image()= "combustible.png"
 
-    //method colisonoCon(objetoVolador){
-      //  if(position== objetoVolador.position()){
-	    //   	 objetoVolador.combustible(300)}
-	    //else{}   	  
-    //}
- }
+    method colisonoCon(objetoVolador){
+       return if(position== objetoVolador.position()){
+	         objetoVolador.combustible(300)}
+	         else{}   	  
+    }
+}
+ 
+object dobleCanion{
+	
+	var property position = game.at(0,6)
+	
+	method image() = "dobleCanon.png"
+}
